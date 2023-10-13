@@ -15,20 +15,20 @@ def intro():
               d88P  888  888888  888  888888  88888888888888 
              d88P   Y88..88P888  888  888888 d88P888Y8b.     
             88888888 "Y88P" 888  888  88888888P" 888 "Y8888      
-            
-                        (_)   | |               | |
-                         _ ___| | __ _ _ __   __| |
-                        | / __| |/ _` | '_ \ / _` |
-                        | \__ \ | (_| | | | | (_| |
-                        |_|___/_|\__,_|_| |_|\__,_|     
+                              _                 _
+                       (_)   | |               | |
+                        _ ___| | __ _ _ __   __| |
+                       | / __| |/ _` | '_ \ / _` |
+                       | \__ \ | (_| | | | | (_| |
+                       |_|___/_|\__,_|_| |_|\__,_|     
       ''' + Fore.RESET)
 
       print()
 
-      bienvenida = Fore.GREEN + "        Bienvenido a Zombie Island, no pierdas tiempo, debes escapar!" + Fore.RESET
+      bienvenida = Fore.GREEN + "        Bienvenido/a a Zombie Island, no pierdas tiempo, debes escapar!" + Fore.RESET
       for char in bienvenida:
             print(char, end='', flush=True)
-            time.sleep(0.05)
+            time.sleep(0.02)
 
       print()
 
@@ -53,11 +53,11 @@ def intro():
       parpadeo_thread.join()
 
       print(Fore.CYAN + '''
-            ,:',:`,:'
-      __||_||_||_||__
- ____["""""""""""""""]____
- \ " '''''''''''''''''''' |
-~^~~^~~^~^~^^~^~^~^~^~^~^~^~~^~^~^^~~^~^
+                                    ,:',:`,:'
+                              __||_||_||_||__
+                        ____["""""""""""""""]____
+                        \ " '''''''''''''''''''' |
+             ~~^~^~^~~^~~^~^~^^~^~^~^~^~^~^~^~~^~^~^^~~^~^
             ''' + Fore.RESET)
       
       historia_intro = '''Había amanecido un día soleado en la pequeña isla tropical de Isla Muerte.
@@ -68,18 +68,14 @@ mortal que había convertido a la mayoría de sus habitantes en zombis sedientos
 En medio de este caos, me encontraba atrapado en una cabaña abandonada con un grupo de supervivientes. 
 La radio nos informó que un barco y un helicóptero de rescate estaban en camino, 
 pero teníamos que llegar a uno de los dos puntos de evacuación antes de que cayera la noche. 
-Nuestra única oportunidad de sobrevivir era escapar de esta pesadilla. '''
+Nuestra única oportunidad de sobrevivir era escapar de esta pesadilla.\n'''
+      
       for char in historia_intro:
             print(char, end='', flush=True)
-            time.sleep(0.05)
+            time.sleep(0.001)
       
-
-
-      print('''
-      
-            ''')
-
       print()
+
       def parpadear_mensaje(mensaje, velocidad, stop_event):
             while not stop_event.is_set():
              sys.stdout.write(f"{mensaje}\r")
@@ -99,82 +95,14 @@ Nuestra única oportunidad de sobrevivir era escapar de esta pesadilla. '''
       input()
       stop_event.set()
       parpadeo_thread.join()
-      print(
-           
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      )
-      #Espacio EN blanco
+      #print()
 
 def nivel_uno():
      
       print("Se escucha que golpean la puerta. El grupo confía en ti... <Abrir> o <Ignorar>? ")
       puerta = input().lower()
 
-      print(
-           
-
-      )
+      print()
 
       if puerta == "abrir":
             print("Que alivio! Era el Capitan Jack Williams. Trae consigo el mapa de la isla...")
@@ -219,11 +147,11 @@ def nivel_uno():
         ~    :_                                            _.-'.-' ~
      ~     ~   "._,-'.-'._    .-`-._;'-._.='._          .-'  ~
                     ~     '-_."      ~    ~   '-._:'=~_.'       ~
-           ~     ~      ~        ~     ~        ~          ~    ~''' + Fore.RESET)
+           ~     ~      ~        ~     ~        ~          ~    ~\n''' + Fore.RESET)
                #Esta el mapa aca metido
             print()
             input("Presiona Enter para cerrar...")   
-            print("(Notas una herida en su cuello, al parecer es una mordida) Diablos!", Fore.RED+"ESTÁ INFECTADO."+Fore.RESET)
+            print("\n(Notas una herida en su cuello, al parecer es una mordida) Diablos!", Fore.RED+"ESTÁ INFECTADO."+Fore.RESET)
             print()
             print("Eliges <pelear> o tomas el <mapa> y huyen?")
             mordida = input().lower()
@@ -234,9 +162,8 @@ def nivel_uno():
             else: 
                   print()
                   print("El Capitán se avalancha sobre ti, luego de un forcejo recibes una mordida letal.")
-                  time.sleep(2.5)
+                  time.sleep(1)
                   print(Fore.RED + "El grupo decide abandonarte." + Fore.RESET)
-
 
       else: 
             print("Decides ignorar el ruido de la puerta, discutes con el grupo posibles rutas de escape...")
