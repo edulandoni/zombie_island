@@ -174,19 +174,19 @@ def nivel_uno():
             mordida = input().lower()
 
             if mordida == "mapa":
-                  print("Ok") #############
+            #Vas a Comisaria#
 
             else: 
                   print()
-            frases = ["El Capitán se avalancha sobre ti, luego de un forcejo recibes una mordida letal.", Fore.RED+"                       El grupo decide abandonarte."+Fore.RESET]
+                  frases = ["El Capitán se avalancha sobre ti, luego de un forcejo recibes una mordida letal.", Fore.RED+"                       El grupo decide abandonarte."+Fore.RESET]
 
-            for frase in frases:
-                  print(frase, end='', flush=True)
-                  time.sleep(1.5)
-                  print("")
-                  time.sleep(1)
+                  for frase in frases:
+                        print(frase, end='', flush=True)
+                        time.sleep(1.5)
+                        print("")
+                        time.sleep(1)
 
-            print('''
+                  print('''
                                      ____
                               __,---'     `--.__
                            ,-'                ; `.
@@ -206,16 +206,51 @@ def nivel_uno():
                       ``-`-;__;:  ;  ;__;
                                `-- `-'
                   ''')
-
+            #El capitan te muerde#
 
 
       else: 
             print("Decides ignorar el ruido de la puerta, discutes con el grupo posibles rutas de escape...")
 
+def comisaria()
+      print(''' 
+Consiguen esquivar al Capitan por los pelos! Escapan del barco y 
+acuerdan encontrarse en la cabaña del guardavidas.
+
+Despues de que los heridos recibieron primeros auxilios y 
+todos se calmaron lo suficiente para poder hablar dicidieron 
+idear un plan.
+
+Al ver con atencion el mapa vieron puntos de interes: 
+
+Un <Hospital>, Una <Comisaria>.
+
+Luego de compartir varios puntos de vista el grupo se dividio en dos ideas:
+
+Un grupo votó que habia que buscar suministros en el hospital para atender a los heridos
+¿De que sirve un grupo sin superviventes?
+
+El otro grupo explico que los heridos solo nos retrasarian y que habia que
+buscar armas y municiones.
+¿De que sirve sanarnos si no podemos defendernos?
+
+
+Que decides?''', Fore.LIGHTGREEN_EX + "<Hospital>" + Fore.RESET," o ", Fore.BLUE + "<Comisaria>" + Fore.RESET)
+#historia comisaria#
+      comisaria_hospital=input().lower()
+
+      if comisaria_hospital == "comisaria":
+                       print("Tomas la decision de avanzar hacia la comisaria" )
+
+
+      elif comisaria_hospital == "hospital":
+
 while True:
       if intro():
             continue
       if nivel_uno():
+            continue
+      if comisaria()
             continue
 
       reiniciar = input("           ¿Deseas reiniciar el juego desde el principio? (Si/No): ").lower()
