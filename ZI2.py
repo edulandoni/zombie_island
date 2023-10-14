@@ -1,5 +1,5 @@
-import threading
 import time
+import threading
 import sys
 from colorama import Fore, Back, Style, init
 
@@ -25,10 +25,10 @@ def intro():
 
       print()
 
-      bienvenida = Fore.GREEN + "        Bienvenido/a a Zombie Island, no pierdas tiempo, debes escapar!" + Fore.RESET
+      bienvenida = Fore.GREEN + "      Bienvenido/a a Zombie Island, no pierdas tiempo, debes escapar!" + Fore.RESET
       for char in bienvenida:
             print(char, end='', flush=True)
-            time.sleep(0.02)
+            time.sleep(0.04)
 
       print()
 
@@ -41,7 +41,7 @@ def intro():
              sys.stdout.flush()
              time.sleep(velocidad)
 
-      mensaje = "                     Presiona Enter para continuar"
+      mensaje = "                   Presiona Enter para continuar"
       velocidad = 0.85
 
       stop_event = threading.Event()
@@ -78,6 +78,7 @@ Nuestra única oportunidad de sobrevivir era escapar de esta pesadilla.\n'''
 
       def parpadear_mensaje(mensaje, velocidad, stop_event):
             while not stop_event.is_set():
+                  
              sys.stdout.write(f"{mensaje}\r")
              sys.stdout.flush()
              time.sleep(velocidad)
@@ -90,25 +91,31 @@ Nuestra única oportunidad de sobrevivir era escapar de esta pesadilla.\n'''
 
       stop_event = threading.Event()
       parpadeo_thread = threading.Thread(target=parpadear_mensaje, args=(mensaje, velocidad, stop_event))
-
       parpadeo_thread.start()
       input()
       stop_event.set()
       parpadeo_thread.join()
-      #print()
+      print("--------------------------------------------------------------------------------------------------------")
+
 
 def nivel_uno():
-     
+   
+      print()
       print("Se escucha que golpean la puerta. El grupo confía en ti... <Abrir> o <Ignorar>? ")
       puerta = input().lower()
 
       print()
-
       if puerta == "abrir":
-            print("Que alivio! Era el Capitan Jack Williams. Trae consigo el mapa de la isla...")
+
+            frases = ["Que alivio! Era el Capitán Jack Williams.", " Trae consigo el mapa de la isla",]
+
+            for frase in frases:
+                  print(frase, end='', flush=True)
+                  time.sleep(1)
             print()
-            time.sleep = (1)
-            print("Deseas hecharle un vistazo rápido? <Si> o <No>")
+
+            time.sleep(1)
+            print("          Deseas hecharle un vistazo rápido? <Si> o <No>")
             abrir_mapa = input().lower()
 
             if abrir_mapa == "si":
@@ -150,10 +157,20 @@ def nivel_uno():
            ~     ~      ~        ~     ~        ~          ~    ~\n''' + Fore.RESET)
                #Esta el mapa aca metido
             print()
-            input("Presiona Enter para cerrar...")   
-            print("\n(Notas una herida en su cuello, al parecer es una mordida) Diablos!", Fore.RED+"ESTÁ INFECTADO."+Fore.RESET)
+            input("Presiona Enter para cerrar...") 
+            print()  
+            time.sleep(1)
+
+
+            frases = ["(Notas una herida en su cuello, al parecer es una mordida)", " Diablos!", Fore.RED+" ESTÁ INFECTADO."+Fore.RESET,]
+
+            for frase in frases:
+                  print(frase, end='', flush=True)
+                  time.sleep(1.5)
+
             print()
-            print("Eliges <pelear> o tomas el <mapa> y huyen?")
+
+            print("Eliges", Fore.RED+"<pelear>"+Fore.RESET,"o tomas el", Fore.YELLOW + "<mapa>" + Fore.RESET , "y huyen?")
             mordida = input().lower()
 
             if mordida == "mapa":
@@ -161,9 +178,45 @@ def nivel_uno():
 
             else: 
                   print()
-                  print("El Capitán se avalancha sobre ti, luego de un forcejo recibes una mordida letal.")
+            frases = ["El Capitán se avalancha sobre ti, luego de un forcejo recibes una mordida letal.", Fore.RED+"                       El grupo decide abandonarte."+Fore.RESET]
+
+            for frase in frases:
+                  print(frase, end='', flush=True)
+                  time.sleep(1.5)
+                  print("")
                   time.sleep(1)
-                  print(Fore.RED + "El grupo decide abandonarte." + Fore.RESET)
+
+            print('''
+                                     ____
+                              __,---'     `--.__
+                           ,-'                ; `.
+                          ,'                  `--.`--.
+                         ,'                       `._ `-.
+                         ;                     ;     `-- ;
+                       ,-'-_       _,-~~-.      ,--      `.
+                       ;;   `-,;    ,'~`.__    ,;;;    ;  ;
+                       ;;    ;,'  ,;;      `,  ;;;     `. ;
+                       `:   ,'    `:;     __/  `.;      ; ;
+                        ;~~^.   `.   `---'~~    ;;      ; ;
+                        `,' `.   `.            .;;;     ;'
+                        ,',^. `.  `._    __    `:;     ,'
+                        `-' `--'    ~`--'~~`--.  ~    ,'
+                       /;`-;_ ; ;. /. /   ; ~~`-.     ;
+                      ; ;  ; `,;`-;__;---;      `----'
+                      ``-`-;__;:  ;  ;__;
+                               `-- `-'
+                  ''')
+            print(Fore.RED + ''' 
+                       _____ _            _____          _ 
+                      |_   _| |          |  ___|        | |
+                        | | | |__   ___  | |__ _ __   __| |
+                        | | | '_ \ / _ \ |  __| '_ \ / _` |
+                        | | | | | |  __/ | |__| | | | (_| |
+                        \_/ |_| |_|\___| \____/_| |_|\__,_|
+                                     
+                                     ''' + Fore.RESET)
+
+
 
       else: 
             print("Decides ignorar el ruido de la puerta, discutes con el grupo posibles rutas de escape...")
@@ -174,13 +227,12 @@ while True:
       if nivel_uno():
             continue
 
-      reiniciar = input("¿Deseas reiniciar el juego desde el principio? (Si/No): ").lower()
+      reiniciar = input("           ¿Deseas reiniciar el juego desde el principio? (Si/No): ").lower()
 
       if reiniciar != "si":
         break
 
 print("Gracias por jugar. Hasta luego!")
-
 
 
 
