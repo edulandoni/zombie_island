@@ -1,3 +1,7 @@
+poner pelear en rojo ya esta diciendo que vas a morir, para mi los colores no van en las elecciones
+
+
+
 # zombie_island
 la version zi2 tiene animaciones, descrubri que si apretas CTRL + C y despues tiras cls varias veces se caga la consola y tenes que tocar el tachito de basura y correr de nuevo.
 
