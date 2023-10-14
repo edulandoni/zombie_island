@@ -41,8 +41,13 @@ def intro():
              sys.stdout.flush()
              time.sleep(velocidad)
 
+<<<<<<< HEAD
+      mensaje = "                     Presiona Enter para continuar"
+      velocidad = 0.70
+=======
       mensaje = "                   Presiona Enter para continuar"
       velocidad = 0.85
+>>>>>>> 9fa4b0052a0d3d724f29ac99d68cb6b5a3beb45f
 
       stop_event = threading.Event()
       parpadeo_thread = threading.Thread(target=parpadear_mensaje, args=(mensaje, velocidad, stop_event))
@@ -157,6 +162,12 @@ def nivel_uno():
            ~     ~      ~        ~     ~        ~          ~    ~\n''' + Fore.RESET)
                #Esta el mapa aca metido
             print()
+<<<<<<< HEAD
+            input("Presiona Enter para cerrar...")   
+            print("\n(Notas una herida en su cuello, al parecer es una mordida) Diablos!", Fore.RED+"ESTÁ INFECTADO.\n"+Fore.RESET)
+            
+            print("Eliges <pelear> o tomas el <mapa> y huyen?")
+=======
             input("Presiona Enter para cerrar...") 
             print()  
             time.sleep(1)
@@ -171,6 +182,7 @@ def nivel_uno():
             print()
 
             print("Eliges", Fore.RED+"<pelear>"+Fore.RESET,"o tomas el", Fore.YELLOW + "<mapa>" + Fore.RESET , "y huyen?")
+>>>>>>> 9fa4b0052a0d3d724f29ac99d68cb6b5a3beb45f
             mordida = input().lower()
 
             if mordida == "mapa":
@@ -178,7 +190,15 @@ def nivel_uno():
 
             else: 
                   print()
+<<<<<<< HEAD
                   frases = ["El Capitán se avalancha sobre ti, luego de un forcejo recibes una mordida letal.", Fore.RED+"                       El grupo decide abandonarte."+Fore.RESET]
+=======
+<<<<<<< HEAD
+                  print("El Capitán se avalancha sobre ti, luego de un forcejo recibes una mordida letal.")
+                  print(Fore.RED + "El grupo decide abandonarte." + Fore.RESET)
+=======
+            frases = ["El Capitán se avalancha sobre ti, luego de un forcejo recibes una mordida letal.", Fore.RED+"                       El grupo decide abandonarte."+Fore.RESET]
+>>>>>>> 7ac2440ae355ee7f95af2b80ccba887985eea364
 
                   for frase in frases:
                         print(frase, end='', flush=True)
@@ -208,10 +228,12 @@ def nivel_uno():
                   ''')
             #El capitan te muerde#
 
+>>>>>>> 9fa4b0052a0d3d724f29ac99d68cb6b5a3beb45f
 
       else: 
             print("Decides ignorar el ruido de la puerta, discutes con el grupo posibles rutas de escape...")
 
+<<<<<<< HEAD
 def comisaria()
       print(''' 
 Consiguen esquivar al Capitan por los pelos! Escapan del barco y 
@@ -245,6 +267,22 @@ Que decides?''', Fore.LIGHTGREEN_EX + "<Hospital>" + Fore.RESET," o ", Fore.BLUE
 
       elif comisaria_hospital == "hospital":
 
+=======
+def hospital():
+      print(">>> HISTORIA DEL HOSPITAL <<<")
+      print("Muchos o poco?")
+      recursos_medicos = input().lower
+      if recursos_medicos == "poco":
+           print("Conseguiste lo suficiente para llegar al puerto + HISTORIO ")  
+           print("Correr/Sigilo")  
+           poco = input().lower
+           if poco == "correr":
+                print("Llamaron mucho la atencion los zombies los atraparon")
+      else:
+            print("Los sobrepasan en número y fuerzas, no logran sobrevivir")
+            print(Fore.RED + "El grupo muere a manos de los Zombies" + Fore.RESET)
+           
+>>>>>>> 7ac2440ae355ee7f95af2b80ccba887985eea364
 while True:
       if intro():
             continue
