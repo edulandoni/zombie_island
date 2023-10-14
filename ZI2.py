@@ -42,7 +42,7 @@ def intro():
              time.sleep(velocidad)
 
       mensaje = "                     Presiona Enter para continuar"
-      velocidad = 0.85
+      velocidad = 0.70
 
       stop_event = threading.Event()
       parpadeo_thread = threading.Thread(target=parpadear_mensaje, args=(mensaje, velocidad, stop_event))
@@ -151,8 +151,8 @@ def nivel_uno():
                #Esta el mapa aca metido
             print()
             input("Presiona Enter para cerrar...")   
-            print("\n(Notas una herida en su cuello, al parecer es una mordida) Diablos!", Fore.RED+"ESTÁ INFECTADO."+Fore.RESET)
-            print()
+            print("\n(Notas una herida en su cuello, al parecer es una mordida) Diablos!", Fore.RED+"ESTÁ INFECTADO.\n"+Fore.RESET)
+            
             print("Eliges <pelear> o tomas el <mapa> y huyen?")
             mordida = input().lower()
 
@@ -162,12 +162,25 @@ def nivel_uno():
             else: 
                   print()
                   print("El Capitán se avalancha sobre ti, luego de un forcejo recibes una mordida letal.")
-                  time.sleep(1)
                   print(Fore.RED + "El grupo decide abandonarte." + Fore.RESET)
 
       else: 
             print("Decides ignorar el ruido de la puerta, discutes con el grupo posibles rutas de escape...")
 
+def hospital():
+      print(">>> HISTORIA DEL HOSPITAL <<<")
+      print("Muchos o poco?")
+      recursos_medicos = input().lower
+      if recursos_medicos == "poco":
+           print("Conseguiste lo suficiente para llegar al puerto + HISTORIO ")  
+           print("Correr/Sigilo")  
+           poco = input().lower
+           if poco == "correr":
+                print("Llamaron mucho la atencion los zombies los atraparon")
+      else:
+            print("Los sobrepasan en número y fuerzas, no logran sobrevivir")
+            print(Fore.RED + "El grupo muere a manos de los Zombies" + Fore.RESET)
+           
 while True:
       if intro():
             continue
